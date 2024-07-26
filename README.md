@@ -105,7 +105,21 @@ To run the code on your local machine
         ### See folder.go file for comments on what I think the code does.
 
     - Suggest some improvements that can be made to the code.
+        ###  Improvements include:
+             -- 1. Add err variable to handle and pass errors
+             -- 2. Remove two loops
+             -- 3. return r through the FetchFolderResponse wrapper
+                
+                -- function body after suggested modification
+                r, err := FetchAllFoldersByOrgID(req.OrgID)
+
+                var ffr *FetchFolderResponse
+                ffr = &FetchFolderResponse{Folders: r}
+                return ffr, err
+
     - Implement any suggested improvements.
+        ### Done in latest push
+
     - Write up some unit tests in `folders_test.go` for your new `GetAllFolders` method
 
 - Component 2:
