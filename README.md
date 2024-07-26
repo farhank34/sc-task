@@ -32,6 +32,44 @@ To run the code on your local machine
 - Component 1:
   - within `folders.go`.
     - We would like you to read through, and run, the code.
+
+        ### An attempt to run the main.go file
+            When I attempted to run the code using the command go run main.go, I get the following errors:
+
+                folders/folders.go:9:3: err declared and not used
+                folders/folders.go:10:3: f1 declared and not used
+                folders/folders.go:11:3: fs declared and not used
+                folders/folders.go:15:6: k declared and not used
+                folders/folders.go:19:6: k1 declared and not used
+
+        ### The errors are due to unused variables in the file. Commented the variables to run the code as it is (minimul change)
+        ### folder.go file after I commented 3 sections
+
+            func GetAllFolders(req *FetchFolderRequest) (*FetchFolderResponse, error) {
+                /*
+                var (
+                    err error
+                    f1  Folder
+                    fs  []*Folder
+                )*/
+                f := []Folder{}
+                r, _ := FetchAllFoldersByOrgID(req.OrgID)
+
+                /* k is replace by _ */
+                for _, v := range r {
+                    f = append(f, *v)
+                }
+                var fp []*Folder
+                
+                /* k1 is replace by _ */
+                for _, v1 := range f {
+                    fp = append(fp, &v1)
+                }
+                var ffr *FetchFolderResponse
+                ffr = &FetchFolderResponse{Folders: fp}
+                return ffr, nil
+            }
+
     - Write some comments on what you think the code does.
     - Suggest some improvements that can be made to the code.
     - Implement any suggested improvements.
