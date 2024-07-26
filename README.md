@@ -74,9 +74,36 @@ To run the code on your local machine
 
           The code runs without any further errors, but the output shows only the same part of the data ("ultimate-pandemic") 999 times suggesting that there is a bug in the code.
 
+      ### Looking for the bug
+
+          The following two loops from the code seem to have no functional purpose in the system;
+        
+      ### 1st Loop
+          for k, v := range r {
+              f = append(f, *v)
+          }
+
+          -- This loop create a value array from pointer array
+          
+          
+      ### 2nd loop
+          var fp []*Folder
+          for k1, v1 := range f {
+              fp = append(fp, &v1)
+          }
+
+
+        -- This loop, creates a pointer array from the value array. 
+        -- 'v1' is declared once in the loop and used (assigned) many times througout the loop. 
+        -- Since the address of v1 is added to fp, fp contains only one address in the whole array (999 times same address)
+        -- When we use fp for futher processing. The value point to the last content of the v1. It could be empty or something else at runtime if the garbage collector cleans it up or it gets allocated to something else.
+
 
 
     - Write some comments on what you think the code does.
+        
+        ### See folder.go file for comments on what I think the code does.
+
     - Suggest some improvements that can be made to the code.
     - Implement any suggested improvements.
     - Write up some unit tests in `folders_test.go` for your new `GetAllFolders` method
