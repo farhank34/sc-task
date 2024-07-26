@@ -42,7 +42,7 @@ To run the code on your local machine
                 folders/folders.go:15:6: k declared and not used
                 folders/folders.go:19:6: k1 declared and not used
 
-        ### The errors are due to unused variables in the file. Commented the variables to run the code as it is (minimul change)
+        ### The errors are due to unused variables in the file. Commented the variables to run the code as it is (minimal change)
         ### folder.go file after I commented 3 sections
 
             func GetAllFolders(req *FetchFolderRequest) (*FetchFolderResponse, error) {
