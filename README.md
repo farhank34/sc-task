@@ -33,7 +33,7 @@ To run the code on your local machine
   - within `folders.go`.
     - We would like you to read through, and run, the code.
 
-        ### An attempt to run the main.go file
+     ### An attempt to run the main.go file
             When I attempted to run the code using the command go run main.go, I get the following errors:
 
                 folders/folders.go:9:3: err declared and not used
@@ -42,8 +42,8 @@ To run the code on your local machine
                 folders/folders.go:15:6: k declared and not used
                 folders/folders.go:19:6: k1 declared and not used
 
-        ### The errors are due to unused variables in the file. Commented the variables to run the code as it is (minimal change)
-        ### folder.go file after I commented 3 sections
+      ### The errors are due to unused variables in the file. I commented the variables to run the code as it is (minimal change)
+      ### Here is the folder.go file after I commented out (or removed) the unused variables.
 
             func GetAllFolders(req *FetchFolderRequest) (*FetchFolderResponse, error) {
                 /*
@@ -69,6 +69,12 @@ To run the code on your local machine
                 ffr = &FetchFolderResponse{Folders: fp}
                 return ffr, nil
             }
+    
+      ### There is a bug
+
+          The code runs without any further errors, but the output shows only the same part of the data ("ultimate-pandemic") 999 times suggesting that there is a bug in the code.
+
+
 
     - Write some comments on what you think the code does.
     - Suggest some improvements that can be made to the code.
