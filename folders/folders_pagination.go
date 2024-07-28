@@ -21,8 +21,7 @@ func GenerateSecureToken(length int) string {
 
 
 
-// The function below GetFolders is renamed from GetAllFolders (in the folders.go file) to avoid a duplicate function
-func GetFolders(firstPageNo int, pageSize int, req *FetchFolderRequest) (*PagedFolderResponse, error) {
+func GetAllFolders(firstPageNo int, pageSize int, req *FetchFolderRequest) (*PagedFolderResponse, error) {
     
     var ffr PagedFolderResponse 
     var fp []*Folder
@@ -54,4 +53,15 @@ func GetFolders(firstPageNo int, pageSize int, req *FetchFolderRequest) (*PagedF
 
 }
 
+func FetchAllFoldersByOrgID(orgID uuid.UUID) ([]*Folder, error) {
+	folders := GetSampleData()
+
+	resFolder := []*Folder{}
+	for _, folder := range folders {
+		if folder.OrgId == orgID {
+			resFolder = append(resFolder, folder)
+		}
+	}
+	return resFolder, nil
+}
 
