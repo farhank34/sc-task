@@ -196,7 +196,7 @@ func setupServer()(*http.Server) {
                 
 
             //Read a page of data to serve
-            res, err := folders.GetFolders(firstPageNo,pageSize,filterOrg)
+            res, err := folders.GetAllFolders(firstPageNo,pageSize,filterOrg)
 
                 if err != nil {
                     panic(err)
