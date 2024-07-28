@@ -10,8 +10,20 @@ follow the official install instruction: [Golang Installation](https://go.dev/do
 
 To run the code on your local machine
 ```
-  go run main.go
+1. Execute: export SESSION_KEY="something in the command prompt.
+2. Run go run main.go
+3. Open your browser, and enter one of the following urls in the address bar:
+
+ //  http://127.0.0.1:8001?OrgId=c1556e17-b7c0-45a3-a6ae-9546248fb17a 
+ //  http://127.0.0.1:8001/?OrgId=c1556e17-b7c0-45a3-a6ae-9546248fb17a&token=fd6dc80e4645c0f46d08
+ //  http://127.0.0.1:8001?OrgId=4212d618-66ff-468a-862d-ea49fef5e183
+
 ```
+
+To run the unit tests in your local machine
+
+1. Go to the folders' folder using the command: cd folders
+2. Execute: go test
 
 ## Folder structure
 

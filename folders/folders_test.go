@@ -57,7 +57,7 @@ func TestGetAllFolders(t *testing.T) {
             //res, err := folders.GetAllFolders(req)        
 
             //Read a page of data to serve
-            res, err := folders.GetFolders(test.FirstPageNumber,test.PageSize,req)
+            res, err := folders.GetAllFolders(test.FirstPageNumber,test.PageSize,req)
 
                 if err != nil {
                     panic(err)
@@ -83,7 +83,7 @@ func TestGetAllFolders(t *testing.T) {
             }
 
             
-            res, err := folders.GetFolders(test.FirstPageNumber,test.PageSize,req)
+            res, err := folders.GetAllFolders(test.FirstPageNumber,test.PageSize,req)
             assert.Equal(t,err,nil,"GetAllFolders throughs a panic error")
 
             got := len(res.Folders)
