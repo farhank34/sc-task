@@ -30,12 +30,19 @@ To run the code on your local machine
 
 - This technical assessment consists of 2 components:
 - Component 1:
-   All the modifications and comments are in part-1 branch
+    All the modifications and comments are in part-1 branch
 
 - Component 2:
-  - Extend your improved code to now facilitate pagination.
-  - You can copy over the existing methods into `folders_pagination.go` to get started.
-  - Write a short explanation of your chosen solution.
+
+    Install two libraries:
+    go get github.com/gorilla/mux
+    go get github.com/gorilla/sessions
+
+    -- Session is used to store the token
+    -- The session is also used to save the index of the latest page.
+    -- Part 2 is implemented considering a REST base request call to the go application
+
+
 
 ## What is pagination?
   - Pagination helps break down a large dataset into smaller chunks.

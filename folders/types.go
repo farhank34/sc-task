@@ -9,3 +9,8 @@ type FetchFolderRequest struct {
 type FetchFolderResponse struct {
 	Folders []*Folder
 }
+
+type PagedFolderResponse struct {
+    Folders []*Folder   `json:"data"`
+    Token string        `json:"token"`
+}
