@@ -21,7 +21,7 @@ func GenerateSecureToken(length int) string {
 
 
 
-
+// The function below GetFolders is renamed from GetAllFolders (in the folders.go file) to avoid a duplicate function
 func GetFolders(firstPageNo int, pageSize int, req *FetchFolderRequest) (*PagedFolderResponse, error) {
     
     var ffr PagedFolderResponse 
